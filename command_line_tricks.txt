@@ -1,0 +1,10 @@
+# get the first line (header) from the file, split by comma to new line and add line number
+head -n 1 sf_fire_incidents.csv | sed 's/,/\n/g' | awk '{ print FNR ". " $0 }'
+
+
+# Fetch line number 2 from the file
+sed -n '2p' sf_fire_incidents.csv
+
+# Fetch lines 2 to 3 from the file
+sed -n '2,3p' sf_fire_incidents.csv
+
